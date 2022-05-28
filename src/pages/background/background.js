@@ -295,7 +295,9 @@ function redirectYouTube(url, initiator, type) {
   if (invidiousSubtitles) {
     url.searchParams.append("subtitles", invidiousSubtitles);
   }
-  if (invidiousAutoplay) {
+  if (type === "sub_frame") {
+    url.searchParams.append("autoplay", 0);
+  } else if (invidiousAutoplay) {
     url.searchParams.append("autoplay", 1);
   }
 
